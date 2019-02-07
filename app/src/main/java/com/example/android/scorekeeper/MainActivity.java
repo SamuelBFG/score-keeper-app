@@ -25,25 +25,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Displays @param score on TextView team_a_score.
-    public void displayScoreA(int score) {
+    private void displayScoreA(int score) {
         TextView scoreA = (TextView) findViewById(R.id.team_a_score);
         scoreA.setText(String.valueOf(score));
     }
 
     //Displays @param score on TextView team_b_score.
-    public void displayScoreB(int score) {
+    private void displayScoreB(int score) {
         TextView scoreB = (TextView) findViewById(R.id.team_b_score);
         scoreB.setText(String.valueOf(score));
     }
 
     //Displays @param fouls on TextView team_a_fouls.
-    public void displayFoulsA(int fouls) {
+    private void displayFoulsA(int fouls) {
         TextView foulsA = (TextView) findViewById(R.id.team_a_fouls);
         foulsA.setText(String.valueOf(fouls));
     }
 
     //Displays @param fouls on TextView team_b_fouls.
-    public void displayFoulsB(int fouls) {
+    private void displayFoulsB(int fouls) {
         TextView foulsB = (TextView) findViewById(R.id.team_b_fouls);
         foulsB.setText(String.valueOf(fouls));
     }
@@ -69,6 +69,17 @@ public class MainActivity extends AppCompatActivity {
     //Increments fouls B
     public void incrementFoulsB(View view){
         foulsB++;
+        displayFoulsB(foulsB);
+    }
+
+    public void reset(View view){
+        scoreA = 0;
+        scoreB = 0;
+        foulsA = 0;
+        foulsB = 0;
+        displayScoreA(scoreA);
+        displayScoreB(scoreB);
+        displayFoulsA(foulsA);
         displayFoulsB(foulsB);
     }
 
